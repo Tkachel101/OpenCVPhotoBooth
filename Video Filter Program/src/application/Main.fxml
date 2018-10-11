@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="640.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainControllerClass">
+   <children>
+      <MenuBar prefHeight="39.0" prefWidth="1024.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#about" text="About Theo's Camera" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ImageView fx:id="cameraView" fitHeight="480.0" fitWidth="640.0" layoutX="296.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="105.0" layoutY="120.0" mnemonicParsing="false" onAction="#revert" text="Revert" />
+      <MenuButton layoutX="95.0" layoutY="176.0" mnemonicParsing="false" text="Filters">
+        <items>
+            <CheckMenuItem fx:id="pencilItem" mnemonicParsing="false" onAction="#pencil" text="Pencil Drawing" />
+            <CheckMenuItem fx:id="mirrorHItem" mnemonicParsing="false" onAction="#mirrorHorizontal" text="Mirror Horizontal" />
+            <CheckMenuItem fx:id="mirrorVItem" mnemonicParsing="false" onAction="#mirrorVertical" text="Mirror Vertical" />
+            <CheckMenuItem fx:id="sepiaItem" mnemonicParsing="false" onAction="#sepia" text="Sepia" />
+            <CheckMenuItem fx:id="grayscaleItem" mnemonicParsing="false" onAction="#grayscale" text="Grayscale" />
+            <CheckMenuItem fx:id="negateItem" mnemonicParsing="false" onAction="#negate" text="Negate" />
+            <CheckMenuItem fx:id="keepRedItem" mnemonicParsing="false" onAction="#keepRed" text="Only Red" />
+            <CheckMenuItem fx:id="keepGreenItem" mnemonicParsing="false" onAction="#keepGreen" text="Only Green" />
+            <CheckMenuItem fx:id="keepBlueItem" mnemonicParsing="false" onAction="#keepBlue" text="Only Blue" />
+            <CheckMenuItem fx:id="zeroRedItem" mnemonicParsing="false" onAction="#zeroRed" text="No Red" />
+            <CheckMenuItem fx:id="zeroGreenItem" mnemonicParsing="false" onAction="#zeroGreen" text="No Green" />
+            <CheckMenuItem fx:id="zeroBlueItem" mnemonicParsing="false" onAction="#zeroBlue" text="No Blue" />
+            <CheckMenuItem fx:id="switchBRGItem" mnemonicParsing="false" onAction="#switchBRG" text="Switch BRG" />
+        	<CheckMenuItem fx:id="switchGBRItem" mnemonicParsing="false" onAction="#switchGBR" text="Switch GBR" />
+        	<CheckMenuItem fx:id="switchBGRItem" mnemonicParsing="false" onAction="#switchBGR" text="Switch BGR" />
+       		<CheckMenuItem fx:id="pixelate" mnemonicParsing="false" onAction="#pixelate" text="Pixelate" />
+       		<CheckMenuItem fx:id="blur" mnemonicParsing="false" onAction="#blur" text="Blur" />
+        </items>
+      </MenuButton>
+      <TextField fx:id="toleranceInput" layoutX="136.0" layoutY="417.0" onKeyTyped="#updatePencil" prefHeight="39.0" prefWidth="89.0" />
+      <Label fx:id="toleranceLabel" layoutX="41.0" layoutY="423.0" text="Tolerance:" />
+      <Label fx:id="pencilLabel" layoutX="53.0" layoutY="262.0" text="Pencil Drawing Options:" />
+      <Separator layoutY="491.0" prefHeight="0.0" prefWidth="296.0" />
+      <Label fx:id="mirrorOptions" layoutX="94.0" layoutY="513.0" text="Mirror Options:" />
+      <Button fx:id="flipMirror" layoutX="102.0" layoutY="549.0" mnemonicParsing="false" text="Flip Mirror" onAction="#flipMirror" />
+      <Label fx:id="framerateLabel" layoutX="697.0" layoutY="575.0" prefHeight="27.0" prefWidth="143.0" text="Framerate: 30 fps" />
+      <Label fx:id="cameraLabel" layoutX="406.0" layoutY="575.0" text="Camera: Default" />
+      <Separator layoutY="241.0" prefHeight="0.0" prefWidth="296.0" />
+      <Button layoutX="573.0" layoutY="569.0" mnemonicParsing="false" onAction="#capture" text="Capture" />
+      <Button layoutX="70.0" layoutY="61.0" mnemonicParsing="false" onAction="#toggle" text="Toggle Capture" />
+      <ColorPicker fx:id="pencilColor" layoutX="130.0" layoutY="311.0" onAction="#updatePencil" />
+      <Label fx:id="pencilColorLabel" layoutX="49.0" layoutY="317.0" text="Pencil Color:" />
+      <Label fx:id="backColorLabel" layoutX="20.0" layoutY="363.0" text="Background Color:" />
+      <ColorPicker fx:id="backColor" layoutX="130.0" layoutY="357.0" onAction="#updatePencil" />
+   </children>
+</AnchorPane>
